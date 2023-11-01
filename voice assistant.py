@@ -34,13 +34,13 @@ def speak(audio):
 def wishMe():
 	hour = int(datetime.datetime.now().hour)
 	if hour>= 0 and hour<12:
-		speak("Good Morning Sir !")
+		speak("Good Morning ma'am !")
 
 	elif hour>= 12 and hour<18:
-		speak("Good Afternoon Sir !") 
+		speak("Good Afternoon ma'am !") 
 
 	else:
-		speak("Good Evening Sir !") 
+		speak("Good Evening ma'am !") 
 
 	assname =("Sasha 1 point o")
 	speak("I am your Assistant")
@@ -48,17 +48,17 @@ def wishMe():
 	
 
 def username():
-	speak("What should i call you sir")
+	speak("What should i call you ma'am")
 	uname = takeCommand()
-	speak("Welcome Mister")
+	speak("Welcome miss")
 	speak(uname)
 	columns = shutil.get_terminal_size().columns
 	
 	print("#####################".center(columns))
-	print("Welcome Mr.", uname.center(columns))
+	print("Welcome .", uname.center(columns))
 	print("#####################".center(columns))
 	
-	speak("How can i Help you, Sir")
+	speak("How can i Help you, ma'am")
 
 def takeCommand():
 	
@@ -131,20 +131,18 @@ if __name__ == '__main__':
 		elif 'play music' in query or "play song" in query:
 			speak("Here you go with music")
 			# music_dir = "G:\\Song"
-			music_dir = "C:\\Users\\GAURAV\\Music"
+			music_dir = "C:\\Users\\Sakshi\\Music"
 			songs = os.listdir(music_dir)
 			print(songs) 
 			random = os.startfile(os.path.join(music_dir, songs[1]))
 
 		elif 'the time' in query:
 			strTime = datetime.datetime.now().strftime("% H:% M:% S") 
-			speak(f"Sir, the time is {strTime}")
+			speak(f"ma'am, the time is {strTime}")
 
-		elif 'open opera' in query:
-			codePath = r"C:\\Users\\GAURAV\\AppData\\Local\\Programs\\Opera\\launcher.exe"
-			os.startfile(codePath)
+		
 
-		elif 'email to gaurav' in query:
+		elif 'email to Sakshi' in query:
 			try:
 				speak("What should I say?")
 				content = takeCommand()
@@ -169,7 +167,7 @@ if __name__ == '__main__':
 
 		elif 'how are you' in query:
 			speak("I am fine, Thank you")
-			speak("How are you, Sir")
+			speak("How are you, ma'am")
 
 		elif 'fine' in query or "good" in query:
 			speak("It's good to know that your fine")
@@ -179,7 +177,7 @@ if __name__ == '__main__':
 			assname = query
 
 		elif "change name" in query:
-			speak("What would you like to call me, Sir ")
+			speak("What would you like to call me, ma'am ")
 			assname = takeCommand()
 			speak("Thanks for naming me")
 
@@ -193,7 +191,7 @@ if __name__ == '__main__':
 			exit()
 
 		elif "who made you" in query or "who created you" in query: 
-			speak("I have been created by Gaurav.")
+			speak("I have been created by Sakshi Shetty.")
 			
 		elif 'joke' in query:
 			speak(pyjokes.get_joke())
@@ -219,21 +217,21 @@ if __name__ == '__main__':
 			speak("If you talk then definitely your human.")
 
 		elif "why you came to world" in query:
-			speak("Thanks to Gaurav. further It's a secret")
+			speak("Thanks to Sakshi. further It's a secret")
 
 		elif 'power point presentation' in query:
 			speak("opening Power Point presentation")
-			power = r"C:\\Users\\GAURAV\\Desktop\\Minor Project\\Presentation\\Voice Assistant.pptx"
+			power = r"C:\\Users\\Sakshi\\Desktop\\Minor Project\\Presentation\\Voice Assistant.pptx"
 			os.startfile(power)
 
 		elif 'is love' in query:
 			speak("It is 7th sense that destroy all other senses")
 
 		elif "who are you" in query:
-			speak("I am your virtual assistant created by Gaurav")
+			speak("I am your virtual assistant created by Sakshi")
 
 		elif 'reason for you' in query:
-			speak("I was created as a Minor project by Mister Gaurav ")
+			speak("I was created as a Minor project by Mister Sakshi ")
 
 		elif 'change background' in query:
 			ctypes.windll.user32.SystemParametersInfoW(20, 
@@ -308,10 +306,10 @@ if __name__ == '__main__':
 			subprocess.call(["shutdown", "/l"])
 
 		elif "write a note" in query:
-			speak("What should i write, sir")
+			speak("What should i write, ma'am")
 			note = takeCommand()
 			file = open('jarvis.txt', 'w')
-			speak("Sir, Should i include date and time")
+			speak("ma'am, Should i include date and time")
 			snfm = takeCommand()
 			if 'yes' in snfm or 'sure' in snfm:
 				strTime = datetime.datetime.now().strftime("% H:% M:% S")
